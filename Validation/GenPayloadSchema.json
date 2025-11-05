@@ -1,0 +1,47 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [ "manifest", "files" ],
+  "properties": {
+    "manifest": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [ "path" ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "language": { "type": "string" },
+          "purpose": { "type": "string" }
+        }
+      }
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [ "path", "contents" ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "contents": { "type": "string" }
+        }
+      }
+    },
+    "run": {
+      "type": "object",
+      "properties": {
+        "instructions": { "type": "string" },
+        "entryPoint": { "type": "string" },
+        "startCommand": { "type": "string" }
+      }
+    },
+    "notes": { "type": "string" }
+  },
+  "additionalProperties": false
+}
+
